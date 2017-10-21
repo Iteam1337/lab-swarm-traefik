@@ -1,0 +1,25 @@
+version: "3.4"
+
+services:
+  traefik:
+    image: traefik:1.4.0
+    networks:
+      - proxy
+    ports:
+      - "80:80"
+      - "5001:8080"
+    volumes:
+      - /var/run/docker.sock:/var/run/docker.sock
+    deploy:
+      labels:
+        traefik.enable: "true"
+      replicas: 1
+      #placement:
+      #  constraints: [node.hostname == dennis-centos]
+      restart_policy:
+        condition: on-failure
+    command: traefik --docker --docker.swarmmode --docker.domain=proxy --docker.watch --web
+
+networks:
+  proxy:
+    external: true
