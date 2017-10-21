@@ -29,5 +29,5 @@ You can run the stack deploy commands over and over again if you have made chang
 Traefik: http://swarm.lab.zengarden.se:5001/dashboard/#/
 
 Services:
-http://whoami.swarm.lab.zengarden.se/
-http://nginx.swarm.lab.zengarden.se/
+- http://whoami.swarm.lab.zengarden.se/
+- http://nginx.swarm.lab.zengarden.se/
