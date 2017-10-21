@@ -10,7 +10,7 @@ services:
       replicas: 3
       labels:
         traefik.port: 80
-        traefik.docker.network: "traefik-net"
+        traefik.docker.network: "proxy"
         traefik.frontend.rule: "Host:whoami.swarm.lab.zengarden.se"
   web-nginx:
     image: kitematic/hello-world-nginx
@@ -21,7 +21,7 @@ services:
       replicas: 3
       labels:
         traefik.port: 80
-        traefik.docker.network: "traefik-net"
+        traefik.docker.network: "proxy"
         traefik.frontend.rule: "Host:nginx.swarm.lab.zengarden.se"
 
 networks:
