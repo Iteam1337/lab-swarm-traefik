@@ -20,6 +20,14 @@ docker stack deploy --compose-file docker-compose.traefik.yml traefik-proxy
 ```
 Deploy services stack.
 ```
-docker stack deploy --compose-file docker-compose.services.yml services
+docker stack deploy --compose-file docker-compose.services.yml lab
 ```
 You can run the stack deploy commands over and over again if you have made changes to your .yml files.
+
+## See for yourself
+
+Traefik: http://swarm.lab.zengarden.se:5001/dashboard/#/
+
+Services:
+http://whoami.swarm.lab.zengarden.se/
+http://nginx.swarm.lab.zengarden.se/
