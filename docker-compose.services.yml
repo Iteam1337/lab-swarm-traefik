@@ -5,7 +5,7 @@ services:
     image: emilevauge/whoami
     networks:
       - default
-      - traefik-net
+      - proxy
     deploy:
       replicas: 3
       labels:
@@ -16,7 +16,7 @@ services:
     image: kitematic/hello-world-nginx
     networks:
       - default
-      - traefik-net
+      - proxy
     deploy:
       replicas: 3
       labels:
@@ -25,5 +25,5 @@ services:
         traefik.frontend.rule: "Host:nginx.swarm.lab.zengarden.se"
 
 networks:
-  traefik-net:
+  proxy:
     external: true
